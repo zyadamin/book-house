@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <link rel="stylesheet" href="style.css" type="text/css">
+
+
+        <title>sign up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #input {
+ 
+  border-radius: 6px;
+  width: 370px;
+  height: 30px;
+}
+#text{
+    font-size: 15px;
+    margin-left: -300px; 
+    color:   #404040; 
+ font-family: Arial, Helvetica, sans-serif;
+    
+}         
+   #submit {
+ background-color:#262626;
+  border-radius: 6px;
+ color:  #ffffff;
+font-size: 20px;
+ padding:10px 120px;
+
+
+   }    #condition{
+      color: #a6a6a6;
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: 15px;
+           margin-left: -70px; 
+   }     
+
+  #text1{
+     font-size: 15px;
+  
+    color:   #404040; 
+ font-family: Arial, Helvetica, sans-serif;}
+   
+        </style>
+        <script>
+          function validateForm() {
+            var x = document.forms["myForm"]["password"].value;
+            if ( x.length<6) {
+              alert("Passwords must be at least 6 characters.");
+              return false;
+            }
+
+            var y = document.forms["myForm"]["Email"].value;
+            var count=0;
+            var i;
+            for(i=0;i<y.length;i++){
+              if(y[i]=='@'){count++;}
+            }
+
+            if (count==0) {
+              alert("invalid Email");
+              return false;
+            }
+
+            
+          }
+
+          </script>
+          
+  
+    </head>
+    <body style= "background-color:#ffffff;">
+        
+    
+      
+      <div style="text-align: center;   ">
+          <form name="myForm" action="singup_helper.php" method="post"  >
+
+          <img src="logo3.jpg" style="width:175px ;height:130px; " ><br>
+          <h1 style=" font-family: Arial, Helvetica, sans-serif;">Create your account<h1>
+          
+                  
+           <label id="text"  style="margin-right: 30px">Name</label>
+           <br>
+           <input id="input" name="Name" type="text" required>
+           <br>    
+          <label id="text">  Username</label>
+          <br>
+          <input id="input" name="Username" type="text"  required>
+          <br>
+          <label id="text" style="margin-right: -30px" >Email address</label> <br>
+          <input id="input" name="Email" type="text" required>
+          <br>
+          <label id="text">Password</label>
+          <br>
+          <input id="input" name="password" type="password" required>
+          <p id="condition">Passwords must be at least 6 characters.</p>
+          
+          <form class="check" >     
+<input style="margin-left:-80px" name="gender" type="radio" value="Admin" required>
+<label id="text1">Admin</label>
+
+  <input style="margin-left:-250px" name="gender" type="radio" value="Student" required>
+  <label id="text1" >Student</label>
+          </form>
+
+
+          <br>   <br>
+            <button id="submit" onclick="return validateForm()"   type="submit">Create account</button>
+    </form>
+             </div>
+</body>
+</html>
